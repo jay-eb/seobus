@@ -1,5 +1,13 @@
+import os
+
 import requests
 import json
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.environ.get("AHREFS_API_KEY")
 
 url = "https://api.ahrefs.com/v3/site-explorer/domain-rating"
 
@@ -8,7 +16,7 @@ params = {
   'target': 'https://chat.openai.com/'
 }
 headers = {
-  'Authorization': 'Bearer rkrc2Jzzhz8GeLnaGDXYgGt9xwcrYmi_G1frajAl',
+  'Authorization': 'Bearer ' + API_KEY,
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
